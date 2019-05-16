@@ -28,8 +28,6 @@ test -z "$TRAVIS_JOB_ID" && sudo -v
 
 echo ""
 echo "› System:"
-echo "  › Disable press-and-hold for keys in favor of key repeat"
-defaults write -g ApplePressAndHoldEnabled -bool false
 
 echo "  › Use AirDrop over every interface"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
@@ -39,10 +37,6 @@ chflags nohidden ~/Library
 
 echo "  › Show the /Volumes folder"
 sudo chflags nohidden /Volumes
-
-echo "  › Set a really fast key repeat"
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 echo "  › Enable text replacement almost everywhere"
 defaults write -g WebAutomaticTextReplacementEnabled -bool true
@@ -54,8 +48,8 @@ echo "  › Require password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-echo "  › Always show scrollbars"
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+echo "  › Automatic show scrollbars"
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 echo "  › Disable Dashboard"
@@ -120,9 +114,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "  › Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-echo "  › Set sidebar icon size to small"
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
-
 echo "  › Show status bar"
 defaults write com.apple.finder ShowStatusBar -bool true
 
@@ -169,8 +160,6 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 echo ""
 echo "› Dock"
-echo "  › Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
-defaults write com.apple.dock tilesize -int 36
 
 echo "  › Speeding up Mission Control animations and grouping windows by application"
 defaults write com.apple.dock expose-animation-duration -float 0.1
