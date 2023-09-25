@@ -43,7 +43,7 @@ brew install azure-cli
 # Kubernetes
 
 brew install kubectl
-brew install brew install Azure/kubelogin/kubelogin
+brew install Azure/kubelogin/kubelogin
 
 # Chrome
 
